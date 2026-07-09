@@ -38,6 +38,10 @@ export const obtenerAuto = async (req, res) => {
 
 export const crearAuto = async (req, res) => {
   try {
+
+    console.log("BODY RECIBIDO:")
+    console.log(req.body)
+
     const {
       nombre,
       modelo,
@@ -61,7 +65,12 @@ export const crearAuto = async (req, res) => {
     })
 
     res.json(auto)
+
   } catch (error) {
+
+    console.error("ERROR AL CREAR AUTO:")
+    console.error(error)
+
     res.status(500).json({
       error: error.message,
     })
@@ -124,3 +133,4 @@ export const actualizarAuto = async (req, res) => {
     })
   }
 }
+
