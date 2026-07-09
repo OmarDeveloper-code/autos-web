@@ -14,8 +14,8 @@ model Auto {
   precio      Float
   color       String
   capacidad   Int
-  imagen      String
-  descripcion String
+  imagen String @db.Text
+  descripcion String @db.Text
 
   createdAt   DateTime @default(now())
 
